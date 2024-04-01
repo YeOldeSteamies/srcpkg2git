@@ -1,0 +1,15 @@
+[Unit]
+Description=source package to git converter/deobfuscator (download and convert/deobfuscate (and upload))
+After=network.target
+
+[Service]
+Environment="SRCPKG_AUTO=1"
+# edit this variable (WorkingDirectory) value if necessary (full PATH) - '~'/'$HOME' may be '/root' (/root/bin)
+#WorkingDirectory=~/bin
+#ExecStart=./srcpkg-dl --auto
+#ExecStart=srcpkg-dl --auto
+# edit this variable (ExecStart) value if necessary (full PATH) - '$HOME' may be '/root' (/root/bin)
+ExecStart=/usr/bin/bash -c 'exec "$HOME/bin/srcpkg-dl" --auto'
+
+[Install]
+WantedBy=multi-user.target

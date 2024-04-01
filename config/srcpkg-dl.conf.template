@@ -1,0 +1,13 @@
+#!/bin/bash
+# SRCPKG DL CONFIG
+# Copyright (C) 2022 evlaV
+
+#[[ -n $srcpkg_remote ]] && srcpkg_remote+=" " # DO NOT EDIT THIS LINE
+
+# e.g.: "https://example.com/?C=M\&O=D" --OR-- "/path/to/file1.html?C=M\&O=D file:///path/to/file2.html?C=M\&O=D"
+srcpkg_remote+=""
+
+[[ -n $srcpkg_remote ]] && srcpkg_remote+=" " # DO NOT EDIT THIS LINE
+
+# e.g.: 'https://example.com/?C=M&O=D' --OR-- '/path/to/file1.html?C=M&O=D' 'file:///path/to/file2.html?C=M&O=D'
+srcpkg_remote+=''

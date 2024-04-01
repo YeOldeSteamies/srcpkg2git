@@ -1,0 +1,116 @@
+# Maintainer: evlaV <valve.evlav@proton.me>
+
+_pkgname=srcpkg2git
+pkgname=$_pkgname-local
+pkgver=0.1
+pkgrel=1
+pkgdesc="source package to git software suite"
+arch=('any')
+url="https://gitlab.com/evlaV/srcpkg2git"
+license=('MPL-2.0 OR GPL-3.0-or-later')
+depends=(
+  'bash'
+  'curl'
+  'git'
+  'grep'
+  'libxml2'
+  'tar'
+)
+makedepends=('coreutils')
+optdepends=(
+  'coreutils'
+  'findutils'
+  'openssl'
+  'util-linux'
+  # xxd
+  'vim'
+  #'gvim'
+)
+provides=("$_pkgname")
+conflicts=("$_pkgname")
+backup=(etc/{git-remote.conf,srcpkg-dl.conf})
+source=(
+  git-commit.sh
+  git-credential-bashelper.sh
+  git-credential-shelper.sh
+  git-remote.conf.template
+  git-remote.sh
+  LICENSE.GPL
+  LICENSE.MPL
+  #Makefile
+  srcpkg2git-gen.desktop.part # generate XDG.desktop
+  srcpkg2git-logo.png
+  srcpkg2git.sh
+  srcpkg2git.timer
+  srcpkg-dl.conf.template
+  srcpkg-dl.sh
+  system-bin.desktop # pregenerated XDG.desktop
+  system-bin.service
+)
+b2sums=(
+  'ef03696f6377066e02eeb6899a78b77074df0cf9f6623020eaee6877b9e33c2ad4bcee82424cac4f8300f2af2e6f1e0ed37f2bc3201c18d54beff78bd10cbfbc'
+  '138ca66f893bc37457e323e1689428f8f172a1e4404a20ac125d8fc66c46c7d4466ca2a9f74600cce32197efdaa08916b422bf1f00832a2e37f8816da690dab4'
+  'e340de9f9816b93c71ff7643822da3a0b0ab097d65a8571a8d40450cc67d1a69b145cf894b51c612f716098180fed8c02b00b726e42f71f22acf34284d62a615'
+  'df512c1bd0c3d9f77282dba9f638ac081273accccc2365624f13d734ece02372178ff23c4b3be5bb36c5e22feb1bccfc4c945108551034f99f3f1a479e0739b2'
+  '813479d945d317f3122375a1d13a385bf4460084b8104d8e767e71fc8c713ed3aedbca37b6e00ff144cdd816376bf3970608d2f69293009724860b89901e52ed'
+  '74915e048cf8b5207abf603136e7d5fcf5b8ad512cce78a2ebe3c88fc3150155893bf9824e6ed6a86414bbe4511a6bd4a42e8ec643c63353dc8eea4a44a021cd' # LICENSE.GPL
+  'e57391102771f85905986aac45cb923f1738fe96ec4a520bad9a79ce68e7a5b14898cdc97d17d84dc8aff7c5aa2aab853701ef8b27c6a5fe9c1f634c19ca9d9b' # LICENSE.MPL
+  #'d6b7c6d4310ba7dd5dbf5678e7aeb3dd9d9c8435634918a2cdce0d4cc9c6ce73b8ea4903355948ac5f388adc7a76aebd10bd88a5511fd854cca48dc8ab33570b' # Makefile
+  '26c78586fd68065ae4e5ebcfffd7743e6ac337e74654773c686e9afe66b58eababe6c64f35bd566e2a88268243b5cce1816d830d2ef183d56f3c01ffa4db1728' # generate XDG.desktop
+  '444b7ebda883896e5f1e31eab60506109679be8784489f17eadc7dad7e94ad7807379f72ddc0feef22c2c9014319246f4bf369158089388805f86e4f9e1e8182'
+  'cf61caddb8a87fe422bbf12da056003a2bde967f597b7770742c8a61275803ea804f398d9bae987ab45b7bf2b1236bcb98b3ea2dabad9a6dfa1ea40908bd6058'
+  '9efc59c23e3561e522b31f96f70765842eeeddacac879d42c80c2a5df930308f499466817b3b4ea416ae816f1f04d93480c6096ef91164dc4ad81c2ae4d714b7'
+  '4fa541756991e5f533820d1ec6c9ed57976773e62aea112ac6385f6d1f88ad4307b4d3ff2e5d6d875ae541b624623c20574de206c3d80a1c52170216a26ec726'
+  '3f01762accb0844322ab11b0402e913caf9ddfe975bf5ea0d156f0543a663e299658149e6224dd0a84afdd613da9294a84aca018e902c4e5d5067fd7b547ff51'
+  '103bffd2a38cd31733d6531173e255bf366028889ed4bd3359b7a9f0b89b6fe6f4a0728df3a13eb1bd3a430268c0b322d2a71681f003a68b13966071a8eba442' # pregenerated XDG.desktop
+  '0ec0f79af95d42c9bc77df68b247488f889b988005c88995d1a4fd4f82b8a3290d7a08a0d647c35d629d91d97bd00cf061e417ab4c8bb2596907530365bf199e'
+)
+
+package() {
+  # Makefile (install[-systemd]-system-[bin|package])
+  #make DESTDIR="$pkgdir/" install-system-bin
+  #make DESTDIR="$pkgdir/" install-systemd-system-bin
+  #make DESTDIR="$pkgdir/" install-system-package
+  #make DESTDIR="$pkgdir/" install-systemd-system-package
+  install -Dm755 git-commit.sh "$pkgdir/usr/bin/git-commit"
+  install -Dm755 git-credential-bashelper.sh "$pkgdir/usr/bin/git-credential-bashelper"
+  install -Dm755 git-credential-shelper.sh "$pkgdir/usr/bin/git-credential-shelper"
+  install -Dm644 git-remote.conf.template "$pkgdir/etc/git-remote.conf"
+  install -Dm755 git-remote.sh "$pkgdir/usr/bin/git-remote"
+  install -Dm644 LICENSE.GPL "$pkgdir/usr/share/licenses/$_pkgname/LICENSE.GPL"
+  install -Dm644 LICENSE.MPL "$pkgdir/usr/share/licenses/$_pkgname/LICENSE.MPL"
+  # pregenerated XDG.desktop
+  if [[ -s system-bin.desktop ]]; then
+    install -Dm644 system-bin.desktop "$pkgdir/usr/share/applications/srcpkg2git.desktop"
+  # generate XDG.desktop
+  elif [[ -s srcpkg2git-gen.desktop.part ]]; then
+    cp -f srcpkg2git-gen.desktop.part srcpkg2git-gen.desktop
+    echo "Exec=/usr/bin/srcpkg-dl --auto" >> srcpkg2git-gen.desktop
+    # cosmetic user patch (sed required) - sed is a dependency of base-devel and is assumed already installed
+    #sed -i '4s/$/ (user)/' srcpkg2git-gen.desktop
+    echo "generated XDG desktop entry: $PWD/srcpkg2git-gen.desktop"
+    install -Dm644 srcpkg2git-gen.desktop "$pkgdir/usr/share/applications/srcpkg2git.desktop"
+  fi
+  install -Dm755 srcpkg2git.sh "$pkgdir/usr/bin/srcpkg2git"
+  # systemd system unit
+  #install -Dm644 system-bin.service "$pkgdir/usr/lib/systemd/system/srcpkg2git.service"
+  #install -Dm644 srcpkg2git.timer "$pkgdir/usr/lib/systemd/system/srcpkg2git.timer"
+  # systemd user unit
+  install -Dm644 system-bin.service "$pkgdir/usr/lib/systemd/user/srcpkg2git.service"
+  install -Dm644 srcpkg2git.timer "$pkgdir/usr/lib/systemd/user/srcpkg2git.timer"
+  install -Dm644 srcpkg-dl.conf.template "$pkgdir/etc/srcpkg-dl.conf"
+  install -Dm755 srcpkg-dl.sh "$pkgdir/usr/bin/srcpkg-dl"
+  # icon
+  if [[ -s srcpkg2git-logo.png ]]; then
+    if [[ -d /usr/local/share/icons ]]; then
+      install -Dm644 srcpkg2git-logo.png "$pkgdir/usr/local/share/icons/srcpkg2git.png"
+    elif [[ -d /usr/share/icons ]]; then
+      install -Dm644 srcpkg2git-logo.png "$pkgdir/usr/share/icons/srcpkg2git.png"
+    elif [[ -d /usr/share/pixmaps ]]; then
+      install -Dm644 srcpkg2git-logo.png "$pkgdir/usr/share/pixmaps/srcpkg2git.png"
+    else
+      install -Dm644 srcpkg2git-logo.png "$pkgdir/usr/share/icons/srcpkg2git.png"
+      #install -Dm644 srcpkg2git-logo.png "$pkgdir/usr/share/pixmaps/srcpkg2git.png"
+    fi
+  fi
+}

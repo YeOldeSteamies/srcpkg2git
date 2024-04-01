@@ -1,0 +1,13 @@
+#!/bin/bash
+# GIT REMOTE CONFIG
+# Copyright (C) 2022 evlaV
+
+# e.g.: https://gitlab.com/evlaV --OR-- git@gitlab.com:evlaV
+[[ -z $git_remote_url ]] && git_remote_url=
+
+# HTTP(S) configuration (requires included git-credential-bashelper) - the following are ignored if using SSH
+[[ -z $git_remote_username ]] && git_remote_username=
+# use personal access token instead of password if two-factor authentication (2FA) enabled - keep/retain single quotes ('')
+[[ -z $git_remote_password ]] && git_remote_password=''
+# set to full PATH of password file - used if password above UNSET (fallback) - keep/retain double quotes ("")
+[[ -z $git_remote_password_file ]] && git_remote_password_file=""

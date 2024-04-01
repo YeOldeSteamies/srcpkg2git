@@ -1,0 +1,1 @@
+../../srcpkg2git.sh

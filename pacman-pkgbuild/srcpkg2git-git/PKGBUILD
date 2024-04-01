@@ -1,0 +1,92 @@
+# Maintainer: evlaV <valve.evlav@proton.me>
+
+_pkgname=srcpkg2git
+pkgname=$_pkgname-git
+pkgver=0.1
+pkgrel=1
+pkgdesc="source package to git software suite"
+arch=('any')
+url="https://gitlab.com/evlaV/srcpkg2git"
+license=('MPL-2.0 OR GPL-3.0-or-later')
+depends=(
+  'bash'
+  'curl'
+  'git'
+  'grep'
+  'libxml2'
+  'tar'
+)
+makedepends=(
+  'coreutils'
+  'git'
+)
+optdepends=(
+  'coreutils'
+  'findutils'
+  'openssl'
+  'util-linux'
+  # xxd
+  'vim'
+  #'gvim'
+)
+provides=("$_pkgname")
+conflicts=("$_pkgname")
+backup=(etc/{git-remote.conf,srcpkg-dl.conf})
+source=("git+$url.git")
+b2sums=('SKIP')
+
+pkgver() {
+  cd "$_pkgname"
+  #git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+  git describe --long --tags | sed 's/-/.r/;s/-/./'
+}
+
+package() {
+  cd "$_pkgname"
+  # Makefile (install[-systemd]-system-[bin|package])
+  #make DESTDIR="$pkgdir/" install-system-bin
+  #make DESTDIR="$pkgdir/" install-systemd-system-bin
+  #make DESTDIR="$pkgdir/" install-system-package
+  #make DESTDIR="$pkgdir/" install-systemd-system-package
+  install -Dm755 git-commit.sh "$pkgdir/usr/bin/git-commit"
+  install -Dm755 git-credential-bashelper.sh "$pkgdir/usr/bin/git-credential-bashelper"
+  install -Dm755 git-credential-shelper.sh "$pkgdir/usr/bin/git-credential-shelper"
+  install -Dm644 config/git-remote.conf.template "$pkgdir/etc/git-remote.conf"
+  install -Dm755 git-remote.sh "$pkgdir/usr/bin/git-remote"
+  install -Dm644 LICENSE.GPL "$pkgdir/usr/share/licenses/$_pkgname/LICENSE.GPL"
+  install -Dm644 LICENSE.MPL "$pkgdir/usr/share/licenses/$_pkgname/LICENSE.MPL"
+  # pregenerated XDG.desktop
+  if [[ -s xdg/system-bin.desktop ]]; then
+    install -Dm644 xdg/system-bin.desktop "$pkgdir/usr/share/applications/srcpkg2git.desktop"
+  # generate XDG.desktop
+  elif [[ -s xdg/srcpkg2git-gen.desktop.part ]]; then
+    cp -f xdg/srcpkg2git-gen.desktop.part xdg/srcpkg2git-gen.desktop
+    echo "Exec=/usr/bin/srcpkg-dl --auto" >> xdg/srcpkg2git-gen.desktop
+    # cosmetic user patch (sed required) - sed is a dependency of base-devel and is assumed already installed
+    #sed -i '4s/$/ (user)/' xdg/srcpkg2git-gen.desktop
+    echo "generated XDG desktop entry: $PWD/xdg/srcpkg2git-gen.desktop"
+    install -Dm644 xdg/srcpkg2git-gen.desktop "$pkgdir/usr/share/applications/srcpkg2git.desktop"
+  fi
+  install -Dm755 srcpkg2git.sh "$pkgdir/usr/bin/srcpkg2git"
+  # systemd system unit
+  #install -Dm644 systemd/system-bin.service "$pkgdir/usr/lib/systemd/system/srcpkg2git.service"
+  #install -Dm644 systemd/srcpkg2git.timer "$pkgdir/usr/lib/systemd/system/srcpkg2git.timer"
+  # systemd user unit
+  install -Dm644 systemd/system-bin.service "$pkgdir/usr/lib/systemd/user/srcpkg2git.service"
+  install -Dm644 systemd/srcpkg2git.timer "$pkgdir/usr/lib/systemd/user/srcpkg2git.timer"
+  install -Dm644 config/srcpkg-dl.conf.template "$pkgdir/etc/srcpkg-dl.conf"
+  install -Dm755 srcpkg-dl.sh "$pkgdir/usr/bin/srcpkg-dl"
+  # icon
+  if [[ -s images/srcpkg2git-logo.png ]]; then
+    if [[ -d /usr/local/share/icons ]]; then
+      install -Dm644 images/srcpkg2git-logo.png "$pkgdir/usr/local/share/icons/srcpkg2git.png"
+    elif [[ -d /usr/share/icons ]]; then
+      install -Dm644 images/srcpkg2git-logo.png "$pkgdir/usr/share/icons/srcpkg2git.png"
+    elif [[ -d /usr/share/pixmaps ]]; then
+      install -Dm644 images/srcpkg2git-logo.png "$pkgdir/usr/share/pixmaps/srcpkg2git.png"
+    else
+      install -Dm644 images/srcpkg2git-logo.png "$pkgdir/usr/share/icons/srcpkg2git.png"
+      #install -Dm644 images/srcpkg2git-logo.png "$pkgdir/usr/share/pixmaps/srcpkg2git.png"
+    fi
+  fi
+}

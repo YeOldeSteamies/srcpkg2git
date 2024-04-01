@@ -1,0 +1,10 @@
+[Unit]
+Description=source package to git converter/deobfuscator (download and convert/deobfuscate (and upload))
+After=network.target
+
+[Service]
+Environment="SRCPKG_AUTO=1"
+ExecStart=srcpkg-dl --auto
+
+[Install]
+WantedBy=multi-user.target

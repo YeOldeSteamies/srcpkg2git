@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=srcpkg2git (auto/bot) (user)
+Comment=source package to git converter/deobfuscator (download and convert/deobfuscate (and upload))
+Exec=/usr/bin/bash -c "'\\$HOME/.local/bin/srcpkg-dl' --auto"
+Icon=srcpkg2git
+Terminal=true
+Categories=Utility;ConsoleOnly;

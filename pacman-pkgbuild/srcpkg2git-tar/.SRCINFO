@@ -1,0 +1,27 @@
+pkgbase = srcpkg2git-tar
+	pkgdesc = source package to git software suite
+	pkgver = 0.1
+	pkgrel = 1
+	url = https://gitlab.com/evlaV/srcpkg2git
+	arch = any
+	license = MPL-2.0 OR GPL-3.0-or-later
+	makedepends = coreutils
+	depends = bash
+	depends = curl
+	depends = git
+	depends = grep
+	depends = libxml2
+	depends = tar
+	optdepends = coreutils
+	optdepends = findutils
+	optdepends = openssl
+	optdepends = util-linux
+	optdepends = vim
+	provides = srcpkg2git
+	conflicts = srcpkg2git
+	backup = etc/git-remote.conf
+	backup = etc/srcpkg-dl.conf
+	source = https://gitlab.com/evlaV/srcpkg2git/-/archive/0.1/srcpkg2git-0.1.tar.gz
+	b2sums = SKIP
+
+pkgname = srcpkg2git-tar
