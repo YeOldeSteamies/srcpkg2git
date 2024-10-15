@@ -1,5 +1,5 @@
 FROM alpine:latest
-ARG url=https://gitlab.com/evlaV/srcpkg2git/-/raw/master
+ARG url=https://github.com/YeOldeSteamies/srcpkg2git/-/raw/master
 ARG workdir=/tmp/srcpkg2git
 WORKDIR $workdir
 ENV SRCPKG_AUTO=1

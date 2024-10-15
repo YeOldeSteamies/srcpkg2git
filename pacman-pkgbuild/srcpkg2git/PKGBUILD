@@ -1,11 +1,9 @@
-# Maintainer: evlaV <valve.evlav@proton.me>
-
 pkgname=srcpkg2git
 pkgver=0.1
 pkgrel=1
 pkgdesc="source package to git software suite"
 arch=('any')
-url="https://gitlab.com/evlaV/srcpkg2git"
+url="https://github.com/YeOldeSteamies/srcpkg2git"
 license=('MPL-2.0 OR GPL-3.0-or-later')
 depends=(
   'bash'

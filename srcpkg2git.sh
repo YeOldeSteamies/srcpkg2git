@@ -13,8 +13,8 @@ srcpkg_dir="${cdir:-$PWD}/SRCPKG2GIT"
 srcpkg_tmp="${cdir:-$PWD}/SRCPKG2GIT_tmp"
 #srcpkg_url=https://steamdeck-packages.steamos.cloud/archlinux-mirror/sources/
 # moved to config (git-remote.conf)
-##git_remote_url=https://gitlab.com/evlaV
-#[[ -z $git_remote_url ]] && git_remote_url=https://gitlab.com/evlaV
+##git_remote_url=https://github.com/YeOldeSteamies
+#[[ -z $git_remote_url ]] && git_remote_url=https://github.com/YeOldeSteamies
 #[[ -z $git_remote_username ]] && git_remote_username=
 # use personal access token instead of password if two-factor authentication (2FA) enabled
 #[[ -z $git_remote_password ]] && git_remote_password=

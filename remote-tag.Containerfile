@@ -1,6 +1,6 @@
 FROM alpine:latest
 ARG tag=0.1
-ARG url=https://gitlab.com/evlaV/srcpkg2git/-/raw/$tag
+ARG url=https://github.com/YeOldeSteamies/srcpkg2git/-/raw/$tag
 ARG workdir=/tmp/srcpkg2git
 WORKDIR $workdir
 ENV SRCPKG_AUTO=1

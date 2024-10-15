@@ -32,11 +32,11 @@ echo
 
 help() {
   echo "usage: $0 git_remote_url [git_remote_name[.git]] [git_push_option ...]"
-  echo " e.g.: $0 https://gitlab.com/evlaV jupiter-hw-support -f"
-  echo "       $0 https://gitlab.com/evlaV jupiter-hw-support.git -f"
+  echo " e.g.: $0 https://github.com/YeOldeSteamies jupiter-hw-support -f"
+  echo "       $0 https://github.com/YeOldeSteamies jupiter-hw-support.git -f"
   echo
-  echo "       $0 git@gitlab.com:evlaV jupiter-hw-support -f"
-  echo "       $0 git@gitlab.com:evlaV jupiter-hw-support.git -f"
+  echo "       $0 git@github.com:YeOldeSteamies jupiter-hw-support -f"
+  echo "       $0 git@github.com:YeOldeSteamies jupiter-hw-support.git -f"
   echo
 }
 

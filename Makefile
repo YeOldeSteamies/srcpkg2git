@@ -2,7 +2,7 @@
 git_bin := $(shell command -v git 2>/dev/null)
 #git_remote_url := $(shell git remote -v 2>/dev/null)
 git_remote_url = $(shell git remote -v 2>/dev/null)
-remote_url := https://gitlab.com/evlaV/srcpkg2git.git
+remote_url := https://github.com/YeOldeSteamies/srcpkg2git.git
 
 # install/target path variables
 # system
@@ -56,7 +56,7 @@ xdg_user_dir := $(HOME)/.local/share/applications
 # default remote_url (DO NOT EDIT)
 ifeq ($(remote_url),)
 #ifndef remote_url
-remote_url := https://gitlab.com/evlaV/srcpkg2git.git
+remote_url := https://github.com/YeOldeSteamies/srcpkg2git.git
 endif
 
 # default user_home_dir (DO NOT EDIT)

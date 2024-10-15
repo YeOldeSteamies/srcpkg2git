@@ -44,21 +44,21 @@
 
 <div align="center">
 
-**[this humble project (srcpkg2git)](https://gitlab.com/evlaV/srcpkg2git) (especially the following (elaborate) Markdown documentation) is dedicated to the memory of:**
+**[this humble project (srcpkg2git)](https://github.com/YeOldeSteamies/srcpkg2git) (especially the following (elaborate) Markdown documentation) is dedicated to the memory of:**
 
 🫶 **[Aaron Swartz](https://en.wikipedia.org/wiki/Aaron_Swartz)** 🫶
 
-**and was proudly built on March 3, 2022 to liberate all packages/repositories/software (GPL or not) from Valve's (and Collabora's and Igalia's) [private GitLab repositories](https://gitlab.steamos.cloud/) ([holo](https://gitlab.steamos.cloud/holo) and [jupiter](https://gitlab.steamos.cloud/jupiter) repositories) to a [public mirror (@gitlab.com/evlaV)](https://gitlab.com/users/evlaV/projects) (<https://gitlab.com/evlaV>) since April 1, 2022**
+**and was proudly built on March 3, 2022 to liberate all packages/repositories/software (GPL or not) from Valve's (and Collabora's and Igalia's) [private GitLab repositories](https://gitlab.steamos.cloud/) ([holo](https://gitlab.steamos.cloud/holo) and [jupiter](https://gitlab.steamos.cloud/jupiter) repositories) to a [public mirror (@github.com/YeOldeSteamies)](https://github.com/YeOldeSteamies) (<https://github.com/YeOldeSteamies>) since April 1, 2022**
 
 </div>
 
-[SteamOS 3.x / Steam Deck public mirror (@gitlab.com/evlaV)](https://gitlab.com/users/evlaV/projects) bot (powered by [renewable](https://en.wikipedia.org/wiki/Renewable_energy) solar ☀️) is composed of [this project (srcpkg2git)](https://gitlab.com/evlaV/srcpkg2git) and additional (private) software (not included)
+[SteamOS 3.x / Steam Deck public mirror (@github.com/YeOldeSteamies)](https://github.com/YeOldeSteamies) bot is composed of [this project (srcpkg2git)](https://github.com/YeOldeSteamies/srcpkg2git).
 
-> additional (private) software (not included) **maintains automation, timing, power management, cryptography, file/data management (generation/modification), git and miscellaneous functions; e.g., [SteamOS 3.x / Steam Deck public mirror (@gitlab.com/evlaV)](https://gitlab.com/users/evlaV/projects) ([holo-PKGBUILD](https://gitlab.com/evlaV/holo-PKGBUILD) and [jupiter-PKGBUILD](https://gitlab.com/evlaV/jupiter-PKGBUILD) repositories)** and (if ever published) is *"incompatible"* with the [license](LICENSE.GPL) of [this project (srcpkg2git)](https://gitlab.com/evlaV/srcpkg2git)
+> additional (private) software (not included) **maintains automation, timing, power management, cryptography, file/data management (generation/modification), git and miscellaneous functions; e.g., [SteamOS 3.x / Steam Deck public mirror (@github.com/YeOldeSteamies)](https://github.com/YeOldeSteamies) ([holo-PKGBUILD](https://github.com/YeOldeSteamies/holo-PKGBUILD) and [jupiter-PKGBUILD](https://github.com/YeOldeSteamies/jupiter-PKGBUILD) repositories)** and (if ever published) is *"incompatible"* with the [license](LICENSE.GPL) of [this project (srcpkg2git)](https://github.com/YeOldeSteamies/srcpkg2git)
 
 ## srcpkg2git rebase
 
-[this repository (srcpkg2git)](https://gitlab.com/evlaV/srcpkg2git) and its affiliated [tags](https://gitlab.com/evlaV/srcpkg2git/-/tags) may occasionally be rebased, which will (destructively) remove obsolete commit history and data, but may disrupt normal git fetch/pull (merge) operations; if you receive a branch diverged error message upon git fetch/pull (merge):
+[this repository (srcpkg2git)](https://github.com/YeOldeSteamies/srcpkg2git) and its affiliated [tags](https://github.com/YeOldeSteamies/srcpkg2git/-/tags) may occasionally be rebased, which will (destructively) remove obsolete commit history and data, but may disrupt normal git fetch/pull (merge) operations; if you receive a branch diverged error message upon git fetch/pull (merge):
 
 ```sh
 git fetch
@@ -261,12 +261,12 @@ see: [phony targets](https://www.gnu.org/software/make/manual/html_node/Phony-Ta
 
 ### Makefile update target
 
-`make` or `make update` will update pre-installed **no install**, **user-home**, and (with optional `git` dependency) **user-home-git** install targets or automatically download (`git clone`) [this entire project (srcpkg2git)](https://gitlab.com/evlaV/srcpkg2git) (**no install**) in current working directory with nothing more than a (ubiquitous) [network connection](https://en.wikipedia.org/wiki/Computer_network), `git`, `make`, (included) [Makefile](Makefile) (`./Makefile`), and the `make` or `make update` command:
+`make` or `make update` will update pre-installed **no install**, **user-home**, and (with optional `git` dependency) **user-home-git** install targets or automatically download (`git clone`) [this entire project (srcpkg2git)](https://github.com/YeOldeSteamies/srcpkg2git) (**no install**) in current working directory with nothing more than a (ubiquitous) [network connection](https://en.wikipedia.org/wiki/Computer_network), `git`, `make`, (included) [Makefile](Makefile) (`./Makefile`), and the `make` or `make update` command:
 
 ```sh
 cd /some/path
 # /some/path$
-curl -O https://gitlab.com/evlaV/srcpkg2git/-/raw/master/Makefile
+curl -O https://github.com/YeOldeSteamies/srcpkg2git/-/raw/master/Makefile
 make
 # installed to: /some/path/srcpkg2git (no install)
 ```
@@ -462,7 +462,7 @@ make install-systemd-user-bin
 
 > ⚠️ destructive install/update PATH: use of this install PATH (`$HOME/srcpkg2git`) for (git) modification/development/contribution/merging (uncommitted changes) is not recommended ⚠️
 
-**home install** has an optional alternative git install target (**user-home-git**); to easily/quickly update **srcpkg2git**, simply update [this repository (srcpkg2git)](https://gitlab.com/evlaV/srcpkg2git) (e.g., `git fetch/pull` or `make`) located at `~/srcpkg2git` i.e., `$HOME/srcpkg2git` (see: **[git install](#git-install)**)
+**home install** has an optional alternative git install target (**user-home-git**); to easily/quickly update **srcpkg2git**, simply update [this repository (srcpkg2git)](https://github.com/YeOldeSteamies/srcpkg2git) (e.g., `git fetch/pull` or `make`) located at `~/srcpkg2git` i.e., `$HOME/srcpkg2git` (see: **[git install](#git-install)**)
 
 (user) home install paths:
 
@@ -477,7 +477,7 @@ install **srcpkg2git** to `~/srcpkg2git` i.e., `$HOME/srcpkg2git`:
 make install-user-home
 ```
 
-or alternatively [git install](#git-install) **srcpkg2git** ((locally) git clone [this repository (srcpkg2git)](https://gitlab.com/evlaV/srcpkg2git)) to `~/srcpkg2git` i.e., `$HOME/srcpkg2git`:
+or alternatively [git install](#git-install) **srcpkg2git** ((locally) git clone [this repository (srcpkg2git)](https://github.com/YeOldeSteamies/srcpkg2git)) to `~/srcpkg2git` i.e., `$HOME/srcpkg2git`:
 
 ```sh
 make install-user-home-git
@@ -489,7 +489,7 @@ install **srcpkg2git** to `~/srcpkg2git` i.e., `$HOME/srcpkg2git` and **systemd 
 make install-systemd-user-home
 ```
 
-or alternatively [git install](#git-install) **srcpkg2git** ((locally) git clone [this repository (srcpkg2git)](https://gitlab.com/evlaV/srcpkg2git)) to `~/srcpkg2git` i.e., `$HOME/srcpkg2git` and install **systemd service** to `~/.local/share/systemd/user` i.e., `$HOME/.local/share/systemd/user`:
+or alternatively [git install](#git-install) **srcpkg2git** ((locally) git clone [this repository (srcpkg2git)](https://github.com/YeOldeSteamies/srcpkg2git)) to `~/srcpkg2git` i.e., `$HOME/srcpkg2git` and install **systemd service** to `~/.local/share/systemd/user` i.e., `$HOME/.local/share/systemd/user`:
 
 ```sh
 make install-systemd-user-home-git
@@ -563,14 +563,14 @@ make install-user-home-git
 
 ## no install (portable (archivable) and optional git install)
 
-simply `git clone` or copy/extract/unpack [this repository (srcpkg2git)](https://gitlab.com/evlaV/srcpkg2git) ([zip](https://gitlab.com/evlaV/srcpkg2git/-/archive/master/srcpkg2git-master.zip), [tar.gz](https://gitlab.com/evlaV/srcpkg2git/-/archive/master/srcpkg2git-master.tar.gz), [tar.bz2](https://gitlab.com/evlaV/srcpkg2git/-/archive/master/srcpkg2git-master.tar.bz2), [tar](https://gitlab.com/evlaV/srcpkg2git/-/archive/master/srcpkg2git-master.tar)) somewhere/anywhere for a fully portable **no install**
+simply `git clone` or copy/extract/unpack [this repository (srcpkg2git)](https://github.com/YeOldeSteamies/srcpkg2git) ([zip](https://github.com/YeOldeSteamies/srcpkg2git/-/archive/master/srcpkg2git-master.zip), [tar.gz](https://github.com/YeOldeSteamies/srcpkg2git/-/archive/master/srcpkg2git-master.tar.gz), [tar.bz2](https://github.com/YeOldeSteamies/srcpkg2git/-/archive/master/srcpkg2git-master.tar.bz2), [tar](https://github.com/YeOldeSteamies/srcpkg2git/-/archive/master/srcpkg2git-master.tar)) somewhere/anywhere for a fully portable **no install**
 
 or download/install in any directory/path (other than `~` i.e., `$HOME`) for a fully portable **no install** in current working directory (`$PWD/srcpkg2git`) with nothing more than a (ubiquitous) [network connection](https://en.wikipedia.org/wiki/Computer_network), `git`, `make`, (included) [Makefile](Makefile) (`./Makefile`), and the `make` or `make update` command:
 
 ```sh
 cd /some/path
 # /some/path$
-curl -O https://gitlab.com/evlaV/srcpkg2git/-/raw/master/Makefile
+curl -O https://github.com/YeOldeSteamies/srcpkg2git/-/raw/master/Makefile
 make
 # installed to: /some/path/srcpkg2git (no install)
 ```
@@ -729,7 +729,7 @@ no-install.Containerfile/no-install.Dockerfile (`./no-install-local.Containerfil
    or remotely:
 
    ```sh
-   curl -o srcpkg-dl.conf https://gitlab.com/evlaV/srcpkg2git/-/raw/master/config/srcpkg-dl.conf.template -o git-remote.conf https://gitlab.com/evlaV/srcpkg2git/-/raw/master/config/git-remote.conf.template
+   curl -o srcpkg-dl.conf https://github.com/YeOldeSteamies/srcpkg2git/-/raw/master/config/srcpkg-dl.conf.template -o git-remote.conf https://github.com/YeOldeSteamies/srcpkg2git/-/raw/master/config/git-remote.conf.template
    ```
 
    - `./srcpkg-dl.conf` and `./git-remote.conf` may be configured via an editor of your choosing
@@ -743,7 +743,7 @@ no-install.Containerfile/no-install.Dockerfile (`./no-install-local.Containerfil
 
 image/container size: **~30MB**
 
-> image/container size subject to change (+/-) based on the size (and architecture (e.g., [x86_64](https://dl-cdn.alpinelinux.org/alpine/v3.19/releases/x86_64/alpine-minirootfs-3.19.1-x86_64.tar.gz), [x86](https://dl-cdn.alpinelinux.org/alpine/v3.19/releases/x86/alpine-minirootfs-3.19.1-x86.tar.gz), [aarch64](https://dl-cdn.alpinelinux.org/alpine/v3.19/releases/aarch64/alpine-minirootfs-3.19.1-aarch64.tar.gz), or [armv7](https://dl-cdn.alpinelinux.org/alpine/v3.19/releases/armv7/alpine-minirootfs-3.19.1-armv7.tar.gz))) of current/latest container distribution (rootfs) image ([Alpine Linux](https://www.alpinelinux.org/)) and [srcpkg2git](https://gitlab.com/evlaV/srcpkg2git) and all [dependencies](#dependencies) and some/all [optional dependencies](#optional-dependencies)
+> image/container size subject to change (+/-) based on the size (and architecture (e.g., [x86_64](https://dl-cdn.alpinelinux.org/alpine/v3.19/releases/x86_64/alpine-minirootfs-3.19.1-x86_64.tar.gz), [x86](https://dl-cdn.alpinelinux.org/alpine/v3.19/releases/x86/alpine-minirootfs-3.19.1-x86.tar.gz), [aarch64](https://dl-cdn.alpinelinux.org/alpine/v3.19/releases/aarch64/alpine-minirootfs-3.19.1-aarch64.tar.gz), or [armv7](https://dl-cdn.alpinelinux.org/alpine/v3.19/releases/armv7/alpine-minirootfs-3.19.1-armv7.tar.gz))) of current/latest container distribution (rootfs) image ([Alpine Linux](https://www.alpinelinux.org/)) and [srcpkg2git](https://github.com/YeOldeSteamies/srcpkg2git) and all [dependencies](#dependencies) and some/all [optional dependencies](#optional-dependencies)
 
 <details><summary>Alpine Linux release (4/2024) | v3.19.1</summary><p>
 
@@ -957,7 +957,7 @@ CMD ["/bin/sh"]
 1. build image (immutable)
 
    ```sh
-   [sudo] podman build -f https://gitlab.com/evlaV/srcpkg2git/-/raw/master/remote.Containerfile -t srcpkg2git
+   [sudo] podman build -f https://github.com/YeOldeSteamies/srcpkg2git/-/raw/master/remote.Containerfile -t srcpkg2git
    ```
 
    or locally:
@@ -996,12 +996,12 @@ CMD ["/bin/sh"]
 build image (immutable) using tag `0.1`:
 
 ```sh
-[sudo] podman build --build-arg tag=0.1 -f https://gitlab.com/evlaV/srcpkg2git/-/raw/0.1/remote-tag.Containerfile -t srcpkg2git
+[sudo] podman build --build-arg tag=0.1 -f https://github.com/YeOldeSteamies/srcpkg2git/-/raw/0.1/remote-tag.Containerfile -t srcpkg2git
 # or alternatively
-tag=0.1 [sudo] podman build --build-arg tag=$tag -f https://gitlab.com/evlaV/srcpkg2git/-/raw/$tag/remote-tag.Containerfile -t srcpkg2git
+tag=0.1 [sudo] podman build --build-arg tag=$tag -f https://github.com/YeOldeSteamies/srcpkg2git/-/raw/$tag/remote-tag.Containerfile -t srcpkg2git
 # or alternatively
 export tag=0.1
-[sudo] podman build --build-arg tag=$tag -f https://gitlab.com/evlaV/srcpkg2git/-/raw/$tag/remote-tag.Containerfile -t srcpkg2git
+[sudo] podman build --build-arg tag=$tag -f https://github.com/YeOldeSteamies/srcpkg2git/-/raw/$tag/remote-tag.Containerfile -t srcpkg2git
 ```
 
 or locally build image (immutable) using tag `0.1`:
@@ -1016,7 +1016,7 @@ build image (immutable) defaulting to tag `0.1`:
 
 ```sh
 # tag defaults to 0.1 if not provided
-[sudo] podman build -f https://gitlab.com/evlaV/srcpkg2git/-/raw/master/remote-tag.Containerfile -t srcpkg2git
+[sudo] podman build -f https://github.com/YeOldeSteamies/srcpkg2git/-/raw/master/remote-tag.Containerfile -t srcpkg2git
 ```
 
 or locally build image (immutable) defaulting to tag `0.1`:
@@ -1403,11 +1403,11 @@ setup and push local git to git remote (`git_remote_url` configured in `git-remo
 
 ```sh
 usage: git-remote git_remote_url [git_remote_name[.git]] [git_push_option ...]
- e.g.: git-remote https://gitlab.com/evlaV jupiter-hw-support -f
-       git-remote https://gitlab.com/evlaV jupiter-hw-support.git -f
+ e.g.: git-remote https://github.com/YeOldeSteamies jupiter-hw-support -f
+       git-remote https://github.com/YeOldeSteamies jupiter-hw-support.git -f
 
-       git-remote git@gitlab.com:evlaV jupiter-hw-support -f
-       git-remote git@gitlab.com:evlaV jupiter-hw-support.git -f
+       git-remote git@github.com:YeOldeSteamies jupiter-hw-support -f
+       git-remote git@github.com:YeOldeSteamies jupiter-hw-support.git -f
 ```
 
 ## git-credential-bashelper + *git-credential-shelper*
@@ -1425,7 +1425,7 @@ usage: git-commit git_commit_msg [git_commit_date] [git_commit_option ...]
 
 ## license
 
-the contents of [this project (srcpkg2git)](https://gitlab.com/evlaV/srcpkg2git) are licensed under the [GNU General Public License Version 3 (GPLv3)](LICENSE.GPL) or the [Mozilla Public License Version 2.0 (MPL 2.0)](LICENSE.MPL) (see below)
+the contents of [this project (srcpkg2git)](https://github.com/YeOldeSteamies/srcpkg2git) are licensed under the [GNU General Public License Version 3 (GPLv3)](LICENSE.GPL) or the [Mozilla Public License Version 2.0 (MPL 2.0)](LICENSE.MPL) (see below)
 
 ---
 

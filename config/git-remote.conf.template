@@ -1,8 +1,9 @@
 #!/bin/bash
 # GIT REMOTE CONFIG
 # Copyright (C) 2022 evlaV
+# Copyright (C) 2024 YeOldeSteamies
 
-# e.g.: https://gitlab.com/evlaV --OR-- git@gitlab.com:evlaV
+# e.g.: https://github.com/YeOldeSteamies --OR-- git@github.com:YeOldeSteamies
 [[ -z $git_remote_url ]] && git_remote_url=
 
 # HTTP(S) configuration (requires included git-credential-bashelper) - the following are ignored if using SSH
